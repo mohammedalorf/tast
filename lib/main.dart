@@ -6,10 +6,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  pressbutton() {
-    print('button  has pressed');
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,10 +15,20 @@ class MyApp extends StatelessWidget {
       ),
       body: Column(children: [
         Text('questaion ?'),
-        ElevatedButton(child: Text('first choese'), onPressed: pressbutton),
-        ElevatedButton(child: Text('seconed choese'), onPressed: pressbutton),
-        ElevatedButton(child: Text('third choese'), onPressed: pressbutton),
-        ElevatedButton(child: Text('four choese'), onPressed: pressbutton),
+        ElevatedButton(
+            child: Text('first choese'),
+            onPressed: () => print("button 1 has pressed")),
+        ElevatedButton(
+            child: Text('seconed choese'),
+            onPressed: () {
+              print('button 2 has pressed');
+            }),
+        ElevatedButton(
+            child: Text('third choese'),
+            onPressed: () => print("button 3 has been pressed")),
+        ElevatedButton(
+            child: Text('four choese'),
+            onPressed: () => print('button 4 has been pressed')),
       ]),
     ));
   }
