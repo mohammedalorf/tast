@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Questaions.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,14 +15,17 @@ class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    var Questaions = [
+    var questaions = [
       'Are you a pota?',
       'Are you gonzalis?',
     ];
+    void S1tate() {
+      // setState rebulid the hole class
+      setState(() {});
+    }
+
     void ansQ() {
-      setState(() {
-        questaionIndex = questaionIndex + 1;
-      });
+      questaionIndex = questaionIndex + 1;
 
       print(questaionIndex);
     }
@@ -33,14 +37,17 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: [
-            Text(Questaions[questaionIndex]),
+            Questions(questaiontext: questaions[questaionIndex]),
             ElevatedButton(
               child: Text('first choese'),
-              onPressed: ansQ,
+              onPressed: S1tate,
             ),
             ElevatedButton(child: Text('seconed choese'), onPressed: ansQ),
-            ElevatedButton(child: Text('third choese'), onPressed: ansQ),
-            ElevatedButton(child: Text('four choese'), onPressed: ansQ),
+            ElevatedButton(child: Text('third choese'), onPressed: null),
+            ElevatedButton(
+              child: Text('four choese'),
+              onPressed: null,
+            )
           ],
         ),
       ),
