@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Questaions.dart';
+import 'ans.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,42 +13,44 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int questaionIndex = 0;
+  int ansindex = 0;
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     var questaions = [
-      'Are you a pota?',
+      'Are you a miguel?',
       'Are you gonzalis?',
+      'Is saad pota?',
     ];
-    void S1tate() {
-      // setState rebulid the hole class
-      setState(() {});
-    }
-
+    var anss = ["Yes", "No", "Yes , mucho pota"];
     void ansQ() {
+      if (questaionIndex == 2) {
+        questaionIndex = -1;
+      }
       questaionIndex = questaionIndex + 1;
+      if (questaionIndex == 2) {
+        ansindex = 2;
+      } else
+        ansindex = 0;
 
       print(questaionIndex);
+      setState(() {});
     }
 
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('hola'),
+          title: Text('EL Loccos'),
         ),
         body: Column(
           children: [
             Questions(questaiontext: questaions[questaionIndex]),
-            ElevatedButton(
-              child: Text('first choese'),
-              onPressed: S1tate,
+            SizedBox(
+              height: 15,
             ),
-            ElevatedButton(child: Text('seconed choese'), onPressed: ansQ),
-            ElevatedButton(child: Text('third choese'), onPressed: null),
-            ElevatedButton(
-              child: Text('four choese'),
-              onPressed: null,
-            )
+            Answers(ansQ),
+            Answers(ansQ),
+            Answers(ansQ)
           ],
         ),
       ),
