@@ -20,9 +20,9 @@ class _MyAppState extends State<MyApp> {
     var questaions = [
       'Are you a miguel?',
       'Are you gonzalis?',
-      'Is saad pota?',
+      'Is saad poteto?',
     ];
-    var anss = ["Yes", "No", "Yes , mucho pota"];
+    var anss = ["Yes", "No", "Yes , mucho poteto"];
     void ansQ() {
       if (questaionIndex == 2) {
         questaionIndex = -1;
